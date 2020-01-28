@@ -1,3 +1,9 @@
+# notes
+protect the SD card from corruption by mounting the rootfs as RO with an overlayfs.  
+partition the sd card to create a scratch pad writable area to persist pickled data + node configuration files.  
+create a modest 64M tmpfs mount point that we target by default for pickles with a monitor services that keeps an eye on the disk utiliazation of said tmpfs and chunks it out to non-volitle disk (pikcle partition) as it fills.  we need to modify the amya-node daemons to target the tmpfs and /pickle partion for writing/draining.  
+
+
 # OverlayFS based reliable filesystem
 
 This script is used to convert a Raspberry Pi Raspbian based filesystem to use overlayFS based on the work from:
